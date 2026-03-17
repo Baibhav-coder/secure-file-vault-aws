@@ -11,14 +11,10 @@ import boto3
 # AWS CONFIG
 # ----------------------------
 
-REGION = "us-east-1"
-#USER_POOL_ID = "Paste your Cognito User Pool ID here"
-#CLIENT_ID = "Paste your Cognito App Client ID here"
-#CLIENT_SECRET = "Paste your Cognito App Client Secret here"
-
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 CLIENT_ID = os.getenv("CLIENT_ID")
 USER_POOL_ID = os.getenv("USER_POOL_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+REGION = os.getenv("REGION")
 
 BUCKET_NAME = "mycloudprojcybersec"
 
