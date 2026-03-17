@@ -12,9 +12,13 @@ import boto3
 # ----------------------------
 
 REGION = "us-east-1"
-USER_POOL_ID = "us-east-1_kwfnGYzPj"
-CLIENT_ID = "3tfkk9mtmavses3jkfhs3cd9jd"
-CLIENT_SECRET = "n73iup1ve176lllfin784meto068lerd3nok0gr51m2aknvk076"
+#USER_POOL_ID = "Paste your Cognito User Pool ID here"
+#CLIENT_ID = "Paste your Cognito App Client ID here"
+#CLIENT_SECRET = "Paste your Cognito App Client Secret here"
+
+CLIENT_ID = os.getenv("CLIENT_ID")
+USER_POOL_ID = os.getenv("USER_POOL_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 BUCKET_NAME = "mycloudprojcybersec"
 
