@@ -94,6 +94,139 @@ Streamlit App (AWS Elastic Beanstalk)
 
 ---
 
+## 🖥️ Demo Screenshots
+
+---
+
+### 🔐 Application UI
+
+#### Login — AWS Cognito Authentication
+![Login](screenshots/login.png)
+> Secure login powered by AWS Cognito with HMAC-SHA256 secret hash authentication.
+
+#### 👑 Admin Panel — Full Access
+![Admin Panel](screenshots/Admin_Panel.png)
+> Admin role has unrestricted access to all department folders: Engineering, Finance, HR, and Legal.
+
+#### ✏️ Editor Panel — Partial Access
+![Editor Panel](screenshots/Editor_Panel.png)
+> Editor role is restricted to Engineering, Finance, and HR folders only.
+
+#### 👁️ Viewer Panel — Read-Only Access
+![Viewer Panel](screenshots/Viewer_Panel.png)
+> Viewer role has read-only access to the Engineering folder only — enforced server-side via IAM.
+
+---
+
+### 🔑 AWS Cognito — Authentication
+
+#### User Pool
+![Cognito User Pool](screenshots/Cognito_UserPool.png)
+> AWS Cognito User Pool managing all application users with secure authentication flows.
+
+#### Users in Cognito
+![Users in Cognito](screenshots/Users_In_Cognito.png)
+> Registered users provisioned in the Cognito User Pool.
+
+#### Groups (Roles) in Cognito
+![Groups in Cognito](screenshots/Groups_In_Cognito.png)
+> Admin, Editor, and Viewer groups defined in Cognito — mapped to IAM roles for access control.
+
+#### App Client Configuration
+![App Client](screenshots/App_Client.png)
+> Cognito App Client configured with secret hash to prevent unauthorised API calls.
+
+---
+
+### 🗂️ Amazon S3 — Secure Storage
+
+#### S3 Bucket Structure
+![S3 Structure](screenshots/Securevault_S3_Structure.png)
+> Department-level folder isolation: Engineering, Finance, HR, and Legal.
+
+#### Encryption at Rest (SSE)
+![S3 Encryption](screenshots/S3_Encryption.png)
+> Server-side encryption (SSE-S3) enabled — all files encrypted at rest.
+
+#### Versioning Enabled
+![S3 Versioning](screenshots/S3_Versioning.png)
+> S3 versioning active — full file version history and recovery capability.
+
+#### Lifecycle Policy
+![S3 Lifecycle](screenshots/S3_Lifecycle.png)
+> Lifecycle rules configured for automated storage management.
+
+#### S3 Buckets (Logs + Project)
+![S3 Buckets](screenshots/S3_Bucket_For_logs_EB_and_Mycloudproject.png)
+> Separate S3 buckets for application data and Elastic Beanstalk logs.
+
+---
+
+### 🔑 IAM — Authorisation
+
+#### IAM Dashboard
+![IAM Dashboard](screenshots/Iam_dashboard.png)
+> IAM overview showing roles and policies configured for the project.
+
+#### IAM Roles
+![IAM Roles](screenshots/IAM_Roles.png)
+> Dedicated IAM roles for Admin, Editor, and Viewer with least-privilege policies.
+
+#### Cloud Admin IAM Role
+![IAM Cloud Admin](screenshots/IAM_CLOUDADMIN.png)
+> Fine-grained IAM policy for the Admin role — full S3 access across all folders.
+
+#### S3 Admin Role Policy
+![S3 Admin Role](screenshots/S3_ADMIN_ROLE.png)
+> Admin IAM policy granting full S3 bucket access.
+
+#### S3 Editor Role & Policy
+![S3 Editor](screenshots/S3_EDITOR.png)
+> Editor IAM role scoped to Engineering, Finance, and HR folders.
+
+![S3 Editor Policy](screenshots/S3_EDITOR_POLICY.png)
+> Explicit IAM policy denying Editor access to Legal folder.
+
+#### S3 Viewer Role & Policy
+![S3 Viewer Role](screenshots/S3_Viewer_Role.png)
+> Viewer IAM role with read-only permissions on Engineering folder only.
+
+![S3 Viewer Policy](screenshots/S3_Viewere_Policy.png)
+> Explicit IAM policy enforcing Viewer read-only restrictions.
+
+---
+
+### 📊 Monitoring, Logging & Alerts
+
+#### CloudTrail Dashboard
+![CloudTrail](screenshots/Cloudtrail_Dashboards.png)
+> AWS CloudTrail logging all API activity — including unauthorised access attempts.
+
+#### CloudWatch Alarms
+![CloudWatch Alarms](screenshots/Cloudwatch_Alarms.png)
+> CloudWatch alarms configured to trigger on suspicious or denied access events.
+
+#### CloudWatch Logs
+![CloudWatch Logs](screenshots/Cloudwatch_Logs.png)
+> Real-time log streams capturing all application and infrastructure events.
+
+#### SNS Email Notification
+![SNS Notification](screenshots/SNS_Notification_Via_Email.png)
+> Live SNS email alert triggered on a security event — demonstrating real-time alerting.
+
+---
+
+### ☁️ Deployment — AWS Elastic Beanstalk
+
+#### Elastic Beanstalk Environment
+![Elastic Beanstalk](screenshots/ElasticBeanstalk.png)
+> Application deployed and running on AWS Elastic Beanstalk.
+
+![Elastic Beanstalk Health](screenshots/Elastic_BeanStalk.png)
+> Environment health status showing successful deployment.
+
+---
+
 ## 🚀 Deployment
 
 This project is deployed using **AWS Elastic Beanstalk**.
